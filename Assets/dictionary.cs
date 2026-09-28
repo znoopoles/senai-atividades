@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class dictionary : MonoBehaviour
 {
-   enum Itens
+   public enum Itens
     {
         ChaveDeFenda,
         FitaCola,
@@ -18,21 +18,21 @@ public class dictionary : MonoBehaviour
     {
         precosLoja.Add(Itens.ChaveDeFenda, 15);
         precosLoja.Add(Itens.FitaCola, 7);
-        precosLoja.Add("Barulhenta", 250);
-        precosLoja.Add("Relógio de pêndulo", 2000);
+        precosLoja.Add(Itens.Barulhenta, 250);
+        precosLoja.Add(Itens.RelogioDePendulo, 2000);
 
-        int precoBarulhenta = precosLoja["Barulhenta"];
+        int precoBarulhenta = precosLoja[Itens.Barulhenta];
 
-        precosLoja["Barulhenta"] = 150;
+        precosLoja[Itens.Barulhenta] = 150;
 
-        if (precosLoja.ContainsKey("Chave de fenda"))
+        if (precosLoja.ContainsKey(Itens.ChaveDeFenda))
         {
-            int precoChaveDeFenda = precosLoja["Chave de fenda"];
+            int precoChaveDeFenda = precosLoja[Itens.ChaveDeFenda];
         }
 
-        precosLoja.Remove("Relógio de pêndulo");
+        precosLoja.Remove(Itens.RelogioDePendulo);
 
-        foreach (KeyValuePair<string, int> item in precosLoja)
+        foreach (KeyValuePair<Itens, int> item in precosLoja)
         {
             Debug.Log("Item: " + item.Key + ", Preço: " + item.Value);
         }
