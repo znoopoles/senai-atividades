@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class dictionary : MonoBehaviour
 {
-    Dictionary<string, int> precosLoja = new Dictionary<string, int>();
+   enum Itens
+    {
+        ChaveDeFenda,
+        FitaCola,
+        Barulhenta,
+        RelogioDePendulo
+    }
+   
+    Dictionary<Itens, int> precosLoja = new Dictionary<Itens, int>();
 
     void Start()
     {
-        precosLoja.Add("Chave de fenda", 15);
-        precosLoja.Add("Fita-cola", 7);
+        precosLoja.Add(Itens.ChaveDeFenda, 15);
+        precosLoja.Add(Itens.FitaCola, 7);
         precosLoja.Add("Barulhenta", 250);
         precosLoja.Add("Relógio de pêndulo", 2000);
 
