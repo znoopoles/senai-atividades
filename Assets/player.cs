@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class player : MonoBehaviour
 {
-    public string nome;
     public int vida=100;
     public float velocidade=100;
+
+    Rigidbody2D rigidbody2D;
 
     void Awake()
     {
@@ -18,6 +19,6 @@ public class player : MonoBehaviour
         float inputX = Input.GetAxis("Horizontal");
         Vector2 direcao = new Vector2(inputX, 0);
 
-        GetComponent<Rigidbody2D>().linearVelocity = direcao*velocidade*Time.fixedDeltaTime;
+        rigidbody2D.linearVelocity = direcao*velocidade*Time.fixedDeltaTime;
     }
 }
